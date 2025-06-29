@@ -5,7 +5,7 @@ import {
   updateTournament,
   getUserTournaments,
 } from "../controllers/tournamentController.js";
-import { protect } from "../middleware/authmiddleware.js";
+import { protect } from "../middleware/middle.js";
 
 const router = express.Router();
 

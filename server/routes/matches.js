@@ -1,6 +1,6 @@
 import express from "express";
 import { createMatch, getMatches } from "../controllers/matchController.js";
-import { protect } from "../middleware/authmiddleware.js";
+import { protect } from "../middleware/middle.js";
 
 const router = express.Router();
 
