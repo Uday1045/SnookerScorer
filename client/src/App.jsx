@@ -493,8 +493,8 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
-import Login from "./pages/login";
-import Register from "./pages/register";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import TournamentPage from "./pages/TournamentPage";
 import MultiplayerPage from "./pages/MultiplayerPage";
 import TournamentMatchPage from "./pages/Tournament";
