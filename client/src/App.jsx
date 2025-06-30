@@ -501,7 +501,7 @@ import TournamentMatchPage from "./pages/Tournament";
 import MatchHistoryPage from "./pages/MatchHistoryPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import MatchPage from "./pages/Temp";
-import Navbar from "./components/NavBar";
+import Navbar from "./components/Navy";
 
 function AppRoutes() {
   const location = useLocation();
