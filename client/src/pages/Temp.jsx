@@ -172,7 +172,7 @@ setPotHistory([[], []]);
 const token = user?.token; // ✅ assuming you saved it on login
 
   try {
-  await fetch("http://localhost:5000/api/matches", {
+  await fetch(`${import.meta.env.VITE_API_URL}/api/matches`, {
   method: "POST",
   headers: {
     "Content-Type": "application/json",

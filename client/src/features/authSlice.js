@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const user = JSON.parse(localStorage.getItem("user"));
-const API_URL =  "http://localhost:5000"; // Support Vite .env
+const API_URL =  import.meta.env.VITE_API_URL;
 
 const initialState = {
   user: user || null,

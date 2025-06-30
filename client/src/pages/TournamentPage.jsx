@@ -20,7 +20,7 @@ useEffect(() => {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch(`http://localhost:5000/api/tournaments/${tournamentId}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/tournaments/${tournamentId}`, {
         headers: {
           Authorization: `Bearer ${token}`, // ✅ Add auth header
         },
@@ -71,7 +71,7 @@ useEffect(() => {
   };
 
   try {
-    const res = await fetch("http://localhost:5000/api/tournaments", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/tournaments`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -157,7 +157,20 @@ export default function TournamentMatchPage() {
   //     state: { winner },
   //   });
   // };
- 
+ const handleFoulAndRed = () => {
+  setRedsRemaining((prev) => {
+    const after = prev - 1;
+
+   
+    if (after === 0) {
+      setColorsPhase(true);
+      setColorSequenceIndex(0);
+    }
+
+    return after;
+  });
+
+};
 const handleFrameComplete = async () => {
   const winnerIndex = scores[0] > scores[1] ? 0 : 1;
   const winner = players[winnerIndex];
@@ -166,7 +179,7 @@ const handleFrameComplete = async () => {
 
   try {
     // 🔁 1. Save match under current user
-    await fetch("http://localhost:5000/api/matches", {
+    await fetch(`${import.meta.env.VITE_API_URL}/api/matches`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -185,7 +198,7 @@ const handleFrameComplete = async () => {
     });
 
     // 🔁 2. Update tournament state
-    await fetch(`/api/tournaments/${tournamentId}`, {
+    await fetch(`${import.meta.env.VITE_API_URL}/api/tournaments/${tournamentId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -229,7 +242,7 @@ const handleFrameComplete = async () => {
           onUndo={undo}
         />
         <FrameStats currentPlayer={currentPlayer} playerNames={players} />
-        <FoulControls onFoul={handleFoul} />
+        <FoulControls onFoul={handleFoul} handleFoulAndRed={handleFoulAndRed} />
       </div>
     </div>
   );

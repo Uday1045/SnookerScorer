@@ -17,7 +17,7 @@ export default function MatchHistoryPage({ onBackToHome }) {
           return;
         }
 
-        const res = await fetch("http://localhost:5000/api/matches", {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/matches`, {
          headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`, // ✅ include user token
