@@ -23,7 +23,7 @@ export default function MatchPage() {
       navigate("/");
     }
   }, [mode, players, matchType, navigate]);
- const [tournamentMatch, setTournamentMatch] = useState(null);
+//  const [tournamentMatch, setTournamentMatch] = useState(null);
 
   const [matchStarted, setMatchStarted] = useState(false);
   const [scores, setScores] = useState([0, 0]);
@@ -255,7 +255,7 @@ const FrameCompletionDialog = () => (
 
            <FrameStats
              currentPlayer={currentPlayer}
-             playerNames={ multiplayerPlayers }
+             playerNames={ players }
            />
        <FoulControls onFoul={handleFoul}
        handleFoulAndRed={handleFoulAndRed} />
