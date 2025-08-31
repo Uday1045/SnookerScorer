@@ -45,3 +45,6 @@ export const getMatches = async (req, res) => {
     res.status(500).json({ error: "Failed to fetch matches" });
   }
 };
+export const hellopage=async(req,res)=>{
+  res.send("Hello Page");
+};
